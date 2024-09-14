@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng Tóm tắt Văn bản Tiếng Việt</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon"
+          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDayi0LmY-2aHTwwq1c3P7fEuXCFgk_bY2ZQ&usqp=CAU"
+          type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/fonts/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div id="header-bar"></div>
+    <h1>ỨNG DỤNG TÓM TẮT VĂN BẢN TIẾNG VIỆT</h1>
+    {% if 'username' in session %}
+       <div class="welcome-container">
+            <p class="welcome-message">Chào mừng, {{ session['username'] }}!</p>
+            <img src="/static/logo.jpg" alt="Logo" class="logo">
+        </div>
+
+        <div id="logout-container">
+            <a href="{{ url_for('logout') }}">Đăng xuất</a>
+        </div>
+
+       <br>
+       <form method="post" enctype="multipart/form-data">
+          <div id="navbar">
+             <div class="choose">
+                <label for="choice"><a href=""><i class="ti-menu"></i></a></label>
+                <select id="choice" name="choice" style="margin-left: -5px;">
+                    <option value="reset">Chọn chức năng</option>
+                    <option value="direct_input">Nhập văn bản trực tiếp</option>
+                    <option value="choose_file">Chọn văn bản từ dữ liệu</option>
+                    <option value="upload_video">Tải lên video</option>
+                </select>
+             </div>
+             <button type="submit">Tóm tắt</button>
+          </div>
+          <br>
+          <div id="reset" style="display: none;">
+              <p>Chọn chức năng để bắt đầu tóm tắt văn bản.</p>
+          </div>
+          <div id="direct_input" style="display: none;">
+              <label for="text">Nhập văn bản:</label>
+              <textarea name="text" id="text" rows="10" cols="50">{{ original_text }}</textarea>
+          </div>
+          <div id="choose_file" style="display: none;">
+              <label for="file_select">Chọn tệp:</label>
+              <select id="file_select" name="file_select">
+                  {% for file in files %}
+                      <option value="{{ file }}">{{ file }}</option>
+                  {% endfor %}
+              </select>
+          </div>
+          <div id="upload_video" style="display: none;">
+              <label for="video">Chọn tệp video:</label>
+              <input type="file" id="video" name="video" accept="video/*">
+          </div>
+          <br>
+       </form>
+       <h2 style="margin-left: 100px;">Văn bản gốc</h2>
+       <p class="p1" style="margin-left: 192px;margin-right: 15px; width: 1050px;">{{ original_text }}</p>
+       <h2 style="margin-left: 100px;">Văn bản tóm tắt</h2>
+       <p class="p1" style="margin-left: 192px;margin-right: 15px; width: 1050px;" >{{ summary }}</p>
+    {% else %}
+        <p>Vui lòng đăng nhập để sử dụng công cụ tóm tắt văn bản.</p>
+        <a href="{{ url_for('login') }}">Đăng nhập</a>
+    {% endif %}
+    <div id="footer">
+        <div class="socials-list">
+            <a href=""><i class="ti-facebook"></i></a>
+            <a href=""><i class="ti-instagram"></i></a>
+            <a href=""><i class="ti-youtube"></i></a>
+            <a href=""><i class="ti-pinterest-alt"></i></a>
+            <a href=""><i class="ti-twitter"></i></a>
+            <a href=""><i class="ti-linkedin"></i></a>
+        </div>
+        <p class="copyright">Được hỗ trợ bởi <a href="">PhamHuuKhai</a></p>
+    </div>
+</body>
+<script>
+    // Function to show/hide input fields based on the selected option
+    document.getElementById('choice').addEventListener('change', function() {
+        var choice = this.value;
+        document.getElementById('reset').style.display = choice === 'reset' ? 'block' : 'none';
+        document.getElementById('direct_input').style.display = choice === 'direct_input' ? 'block' : 'none';
+        document.getElementById('choose_file').style.display = choice === 'choose_file' ? 'block' : 'none';
+        document.getElementById('upload_video').style.display = choice === 'upload_video' ? 'block' : 'none';
+
+        // Clear the text area when switching to "Nhập văn bản trực tiếp"
+        if (choice === 'direct_input') {
+            document.getElementById('text').value = '';
+        }
+    });
+</script>
+</html>

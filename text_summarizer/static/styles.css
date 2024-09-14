@@ -1,0 +1,402 @@
+/* static/styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/static/anhnen2.jpg') center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 150vh;
+
+}
+
+
+h1 {
+    font-family: 'Engravers MT', sans-serif;
+    color: #fff;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    font-size: 16px; /* Adjust the font size as needed */
+    background: linear-gradient(to right bottom, #ffd700, #ffa500);
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 15px;
+    position: fixed;
+    top: 10px; /* Adjust the top position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1002; /* Set a higher z-index to appear above the header bar */
+    color: #222;
+    height: 20px;
+    margin-top: -4px;
+    margin-left: 50px;
+}
+
+
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 120, 71, 0.9); /* Cam pha đỏ sáng hơn */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+    border: 2px solid #e65100; /* Bo viền cho container */
+}
+
+
+#footer {
+    margin-top: auto;
+    background-color: #333; /* Màu nền của footer */
+    color: white; /* Màu chữ của footer */
+    padding: 20px; /* Khoảng cách giữa nội dung và mép của footer */
+    text-align: center; /* Căn giữa nội dung trong footer */
+    width: 100%; /* Đặt chiều ngang bằng 100% để kéo dài hết đến nav */
+}
+/* static/styles.css */
+#footer a {
+    text-decoration: none; /* Loại bỏ gạch chân của các liên kết trong footer */
+}
+
+
+.socials-list {
+    margin-top: 15px; /* Khoảng cách giữa nội dung và biểu tượng xã hội */
+    margin-left: 105px;
+}
+
+.socials-list a {
+    color: white; /* Màu của các biểu tượng xã hội */
+    margin: 0 15px; /* Khoảng cách giữa các biểu tượng */
+    font-size: 24px; /* Kích thước của biểu tượng xã hội */
+    transition: color 0.3s ease; /* Hiệu ứng màu khi di chuột qua */
+}
+
+.socials-list a:hover {
+    color: #fe2c55; /* Màu của biểu tượng xã hội khi di chuột qua */
+}
+
+.copyright {
+    margin-top: 15px; /* Khoảng cách giữa biểu tượng xã hội và nội dung bản quyền */
+    margin-left: 105px;
+    color: #fff;
+}
+
+.copyright a {
+    color: #ffa500; /* Màu của liên kết "NHÓM 14" */
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    font-weight: bold; /* Đậm chữ của liên kết */
+    transition: color 0.3s ease; /* Hiệu ứng màu khi di chuột qua */
+}
+
+.copyright a:hover {
+    color: #fe2c5d; /* Màu của liên kết "NHÓM 14" khi di chuột qua */
+}
+
+
+h1, h2, p {
+    color: #222;
+}
+
+button {
+	background-color: #fe2c55;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid #e65100; /* Bo viền cho button */
+    transition: background-color 0.3s ease-in-out; /* Hiệu ứng chuyển đổi màu nền */
+	border-radius: 15px;
+}
+
+button:hover {
+    background-color: #d7e600; /* Màu nền khi hover */
+}
+
+/* static/styles.css */
+
+/* static/styles.css */
+#header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+    border: 2px solid #fff; /* White border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+    z-index: 1001;
+}
+
+#logout-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 1002; /* Set a higher z-index than the header to make it appear above the header */
+}
+
+#logout-container a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #fe2c55;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    margin-top: 0px;
+}
+
+#logout-container a:hover {
+    background-color: #00ff00; /* Green background color on hover */
+    color: #000; /* Black text color on hover */
+}
+
+/* static/styles.css */
+
+.welcome-message {
+    position: fixed;
+    top: 0;
+    left: 10px; /* Adjust the left position as needed */
+    background: linear-gradient(to right bottom, #ff8f26, #ff5117);
+    border: 2px solid #ffa500;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff; /* White text color */
+    margin: 10px 0;
+    z-index: 1002;
+    margin-top: 5px;
+    height: 20px;
+}
+
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 180px; /* Adjust the width as needed */
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1003;
+	margin-top: 57px;
+}
+
+#navbar button,
+#navbar label,
+#navbar select {
+    margin-bottom: 15px;
+    margin-left: 15px; /* Adjust the left margin as needed */
+}
+
+#navbar button {
+    width: 120px; /* Adjust the width as needed */
+}
+
+#navbar label {
+    width: 120px; /* Adjust the width as needed */
+	font-size: 14px
+}
+
+#navbar select {
+    width: 120px; /* Adjust the width as needed */
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    font-size: 24px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+
+.choose label {
+    margin-right: 10px; /* Adjust spacing between label and select */
+}
+
+.choose a {
+    text-decoration: none;
+    color: #000; /* Black color for the link */
+	margin-left: -15px;
+    font-size: 20px;
+}
+
+
+.choose select {
+    border-radius: 5px; /* Add border-radius to the select */
+    font-size: 16px; /* Adjust font size */
+    padding: 5px; /* Adjust padding as needed */
+}
+
+.choose {
+    border-radius: 15px;
+    background-color: #f0f0f0; /* Light gray background color */
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 15px; /* Add margin to separate from other elements */
+	width: 144px;
+	display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+h2 {
+    color: #008000; /* Green color for h2 */
+    text-transform: uppercase; /* Uppercase text */
+    font-style: italic; /* Italicize text */
+	text-shadow: 2px 2px 4px #888888;
+}
+.p1 {
+    border: 2px solid #ccc; /* Border for p tags */
+    padding: 10px; /* Padding for p tags */
+    border-radius: 8px; /* Border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    background-color: #fff; /* White background */
+    margin-bottom: 15px; /* Margin between p tags */
+}
+.delete{
+	border-radius: 15px;
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 15px; /* Add margin to separate from other elements */
+	width: 144px;
+}
+.dowload{
+	border-radius: 15px;
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 15px; /* Add margin to separate from other elements */
+	width: 144px;
+}
+.share{
+	border-radius: 15px;
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 15px; /* Add margin to separate from other elements */
+	width: 144px;
+}
+.delete .icon,
+.dowload .icon,
+.share .icon {
+    color: #000; /* Set the text color to black */
+	font-size: 18px;;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Optionally, you can add hover effects */
+.delete .icon:hover,
+.dowload .icon:hover,
+.share .icon:hover {
+    color: #beb1b1; /* Set a darker color on hover if desired */
+}
+
+label {
+    display: block; /* Set display to block to force a new line */
+    margin-bottom: 5px; /* Add some bottom margin for spacing */
+	align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+textarea {
+    display: block; /* Set display to block to force a new line */
+    margin-bottom: 10px; /* Add some bottom margin for spacing */
+	width: 550px;
+}
+/* Add these rules to your existing stylesheet */
+#file_select {
+    display: block; /* Set display to block to force a new line */
+    margin-bottom: 10px; /* Add some bottom margin for spacing */
+    padding: 8px; /* Add padding for better visual appearance */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 15px; /* Round the corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a gray box shadow */
+}
+
+/* Optionally, you can add hover effects */
+#file_select:hover {
+    border-color: #352b2b; /* Darken the border on hover if desired */
+}
+#choose_file{
+	margin-top: 50px;
+    margin-left: 100px
+}
+#direct_input{
+	margin-top: 50px;
+    margin-left: 100px
+}
+#upload_video{
+	margin-top: 50px;
+    margin-left: 100px
+}
+.logo {
+    position: fixed;
+    top: 0;
+    width: 50px; /* Điều chỉnh chiều rộng theo nhu cầu */
+    height: auto; /* Giữ nguyên tỷ lệ khung hình */
+    margin-left: -500px; /* Căn chỉnh khoảng cách từ lề trái */
+    margin-top: 4px; /* Căn chỉnh khoảng cách từ trên xuống */
+    z-index: 1003;
+}
+
+/* Đảm bảo dòng chữ "Chào mừng" và lô-gô được căn chỉnh đúng cách */
+.welcome-container {
+    display: flex;
+    align-items: center;
+    margin-left: 80px; /* Tăng khoảng cách từ lề trái để tránh lô-gô */
+}
+
+.welcome-message {
+    margin-left: 10px; /* Điều chỉnh khoảng cách giữa dòng chữ và lô-gô */
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff; /* Màu chữ trắng */
+    background: linear-gradient(to right bottom, #ff8f26, #ff5117);
+    border: 2px solid #ffa500;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1002;
+    height: 20px;
+}
+
+.choose_2 label a {
+    text-decoration: none; /* Remove underline */
+    margin: 8px 0; /* Add spacing above and below the icons */
+    display: inline-block; /* Ensure block-level display for proper spacing */
+}
+
+.choose_2 label a i {
+    color: #000; /* Set the text color to black */
+    font-size: 24px; /* Adjust the font size as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Optionally, you can add hover effects */
+.choose_2 label a:hover i {
+    color: #beb1b1; /* Set a darker color on hover if desired */
+}
